@@ -42,3 +42,24 @@
 
 -- SELECT brand, model, year FROM cars
 -- 	ORDER BY brand DESC, year;   //sort brands in decending order and then any cars which has the same brand sort by the year
+
+/*
+	Select the brand, model, condition and price from cars
+		order the table by condition in descending order
+		and by price in ascending order
+*/
+
+-- SELECT brand, model, condition, price FROM cars
+-- -- 	ORDER BY condition DESC, price;
+
+-- SELECT brand, model, color, price FROM cars
+--  WHERE color LIKE '%red%'
+--  AND sold is FALSE 
+--  ORDER BY price 
+--  limit 5;
+
+-- SELECT COUNT(*) AS total_sold FROM cars
+-- 	WHERE sold IS TRUE;
+
+--     SELECT SUM(price) AS total_earnings FROM cars
+-- 	WHERE sold IS TRUE;
