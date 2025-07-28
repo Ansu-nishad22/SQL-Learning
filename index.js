@@ -76,7 +76,7 @@ import fs from 'fs';
 );`)
 
   // Executing simple queries for sections 1 - 3
-const response = await db.query(`SELECT brand, model, year, price FROM cars;`)
+const response = await db.query(`SELECT brand, model, year, price, condition FROM cars;`)
 
   console.clear();
   console.table(response.rows,);

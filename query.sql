@@ -98,12 +98,18 @@
 -- 	GROUP BY year
 -- 	-- having count(year) > 1 ;
 
-INSERT INTO cars (
-	brand, model, year, price, color, condition, sold
-) VALUES (
-	'Chevrolet', 'Bel Air', 1955, 50000, 'purple', 5, FALSE
-),(
-	'Porsche', '944_Turbo', 1986, 48000, 'white', 4, FALSE
-),(
-	'tata', '944_Turbo', 1986, 48000, 'white', 4, FALSE
-);
+-- INSERT INTO cars (
+-- 	brand, model, year, price, color, condition, sold
+-- ) VALUES (
+-- 	'Chevrolet', 'Bel Air', 1955, 50000, 'purple', 5, FALSE
+-- ),(
+-- 	'Porsche', '944_Turbo', 1986, 48000, 'white', 4, FALSE
+-- ),(
+-- 	'tata', '944_Turbo', 1986, 48000, 'white', 4, FALSE
+-- );
+
+UPDATE cars SET 
+  condition = 1,
+	price = 10000
+
+where brand = 'Porsche' AND sold is false
