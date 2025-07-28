@@ -63,3 +63,47 @@
 
 --     SELECT SUM(price) AS total_earnings FROM cars
 -- 	WHERE sold IS TRUE;
+
+-- SELECT FLOOR(AVG(price)) AS average FROM cars
+-- 	WHERE brand = 'Bentley'; 
+
+-- SELECT brand, COUNT(brand) AS brand_count FROM cars
+-- GROUP BY brand
+
+
+-- group by
+-- SELECT brand ,
+--  count(brand) AS brand_count,
+--   floor(AVG(price)) AS AVG FROM cars
+-- 	where sold is FAlSE
+-- 	group by brand;
+
+
+/*
+	Select:
+		* year
+		* a count of cars from that year, aliased as car_count
+		* the maximum price
+		* the minimum price
+	from the table cars
+		where the car has been sold
+	group by year
+		only show years where more than one car has been sold from that year
+	order the result by car_count
+*/
+-- SELECT year, COUNT(year) AS car_count,
+--  MAX(price) AS Max_Price,
+--  MIN(price) AS MIN_Price FROM cars
+--   where sold is TRUE
+-- 	GROUP BY year
+-- 	-- having count(year) > 1 ;
+
+INSERT INTO cars (
+	brand, model, year, price, color, condition, sold
+) VALUES (
+	'Chevrolet', 'Bel Air', 1955, 50000, 'purple', 5, FALSE
+),(
+	'Porsche', '944_Turbo', 1986, 48000, 'white', 4, FALSE
+),(
+	'tata', '944_Turbo', 1986, 48000, 'white', 4, FALSE
+);

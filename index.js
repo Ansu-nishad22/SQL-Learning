@@ -63,9 +63,21 @@ import fs from 'fs';
   // Load the SQL file
   const query = fs.readFileSync('query.sql', 'utf8');
 
+  await db.exec(query)
+
+  // Insert example
+  await db.exec(`
+  INSERT INTO cars (
+	brand, model, year, price, color, condition, sold
+) VALUES (
+	'Ford', 'Escort RS2000', 1978, 39000, 'blue', 4, FALSE
+), (
+	'Aston Martin', 'V8 Vantage', 1977, 145000, 'dark green', 5, FALSE
+);`)
+
   // Executing simple queries for sections 1 - 3
-  const response = await db.query(query);
+const response = await db.query(`SELECT brand, model, year, price FROM cars;`)
 
   console.clear();
-  console.table(response.rows, ['brand', 'model', 'year', 'price', 'color', 'condition', 'sold']);
+  console.table(response.rows,);
 })();
